@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "name": "Cropped Shirt",
+        "price": 18.59,
+        "image": "assets/images/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Cropped Shirt",
+        "price": 16.59,
+        "image": "assets/images/2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "T-Shirt With Embroidery",
+        "price": 14.95,
+        "image": "assets/images/3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Trousers With Elastic Waistband",
+        "price": 19.59,
+        "image": "assets/images/4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Sweatpants with contrast",
+        "price": 23.59,
+        "image": "assets/images/5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Wide Leg Trousers",
+        "price": 25.59,
+        "image": "assets/images/6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Cropped Hood Jacket",
+        "price": 22.95,
+        "image": "assets/images/7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Tank Tops",
+        "price": 10.95,
+        "image": "assets/images/8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Cropped Sweatshirt",
+        "price": 15.59,
+        "image": "assets/images/9.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Cami Top",
+        "price": 12.59,
+        "image": "assets/images/10.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Cropped Jacket",
+        "price": 17.59,
+        "image": "assets/images/11.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Mini Skirt",
+        "price": 8.59,
+        "image": "assets/images/12.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Wide Leg Trousers",
+        "price": 12.59,
+        "image": "assets/images/13.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Hooded Jackets",
+        "price": 15.59,
+        "image": "assets/images/14.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Sweat Shorts",
+        "price": 14.59,
+        "image": "assets/images/15.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Fitted Cropped T-Shirts",
+        "price": 10.59,
+        "image": "assets/images/16.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Elasticated Waistband Trousers",
+        "price": 25.95,
+        "image": "assets/images/17.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Baggy high waist Jeans",
+        "price": 20.95,
+        "image": "assets/images/18.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Fitted Cropped T-Shirts",
+        "price": 10.95,
+        "image": "assets/images/19.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Cropped Tank Top",
+        "price": 10.59,
+        "image": "assets/images/20.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Shorts With Elastic Waistband",
+        "price": 13.59,
+        "image": "assets/images/21.jpg"
+    }
+]
