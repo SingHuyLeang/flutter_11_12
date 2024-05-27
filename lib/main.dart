@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_11_12/home.dart';
+import 'package:flutter_11_12/views/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.pink.shade400,
+          primary: Colors.pink.shade400,
+        ),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: HomeScreen(),
     );
   }
 }
