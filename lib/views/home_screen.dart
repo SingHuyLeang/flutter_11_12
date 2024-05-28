@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_11_12/controller/product_controller.dart';
+import 'package:flutter_11_12/model/product_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final controller = ProductController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,8 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                 ),
-                itemCount: 5,
-                itemBuilder: (_, index) => cardProduct(),
+                itemCount: controller.list.length,
+                itemBuilder: (_, index) =>
+                    cardProduct(index, controller.list[index]),
               ),
             ),
           ],
@@ -79,11 +83,67 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget cardProduct() {
-    return Container(
+  Widget cardProduct(int index, ProductModel product) {
+    return SizedBox(
       width: double.infinity,
       height: 200,
-      color: Colors.amber,
+      child: Column(
+        children: [
+          Flexible(
+            flex: 4,
+            child: Image.asset(product.image, fit: BoxFit.cover),
+          ),
+          Flexible(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Price & Save
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Price
+                      Text(
+                        '\$ ${product.price}',
+                        style: const TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      // Icons
+                      IconButton(
+                        onPressed: () => setState(() {
+                          controller.toogle(index);
+                        }),
+                        icon: Icon(
+                          !product.save
+                              ? Icons.bookmark_border
+                              : Icons.bookmark,
+                          color: product.save ? Colors.amber : null,
+                          size: 28,
+                        ),
+                      ),
+                    ],
+                  ),
+                  // Category
+                  Text(
+                    product.category,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
