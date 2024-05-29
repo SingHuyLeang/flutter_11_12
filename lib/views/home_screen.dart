@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_11_12/controller/product_controller.dart';
 import 'package:flutter_11_12/model/product_model.dart';
+import 'package:flutter_11_12/views/detail/detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,19 +14,26 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final controller = ProductController();
+  int index = 0;
+  @override
+  void initState() {
+    log('index : $index');
+    log('message : ${controller.list[index].save}');
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'TEN II',
           style: TextStyle(
             fontFamily: 'Poppins',
             fontSize: 26,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.grey[900],
           ),
         ),
       ),
@@ -91,7 +101,19 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Flexible(
             flex: 4,
-            child: Image.asset(product.image, fit: BoxFit.cover),
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      DetailProduct(index: index, product: product),
+                ),
+              ),
+              child: Hero(
+                tag: product.id,
+                child: Image.asset(product.image, fit: BoxFit.cover),
+              ),
+            ),
           ),
           Flexible(
             flex: 1,
@@ -118,12 +140,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       IconButton(
                         onPressed: () => setState(() {
                           controller.toogle(index);
+                          this.index = index;
+                          log('message : ${controller.list[index].save}');
                         }),
                         icon: Icon(
-                          !product.save
+                          !controller.list[index].save
                               ? Icons.bookmark_border
                               : Icons.bookmark,
-                          color: product.save ? Colors.amber : null,
+                          color:
+                              controller.list[index].save ? Colors.amber : null,
                           size: 28,
                         ),
                       ),
